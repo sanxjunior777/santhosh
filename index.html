@@ -2,96 +2,317 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SANTHOSH R | Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+    body { background: #080b12; color: white; }
+    .glow { text-shadow: 0 0 25px #38bdf8; }
+    .blue { color: #38bdf8; }
+    .glass {
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.09);
+      backdrop-filter: blur(15px);
+    }
+    .card { transition: .3s; }
+    .card:hover {
+      transform: translateY(-7px);
+      border-color: #38bdf8;
+      box-shadow: 0 10px 35px #38bdf822;
+    }
+    .gradient {
+      background: linear-gradient(90deg,#38bdf8,#818cf8,#c084fc);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: .7s;
+    }
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
 </head>
+
 <body>
 
-    <header>
-        <nav>
-            <h2 class="logo">SANX<span>.</span></h2>
+<!-- NAVBAR -->
+<nav class="fixed top-0 w-full z-50 glass">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+    <h1 class="text-xl font-black tracking-wider">
+      SANTHOSH<span class="blue">.</span>
+    </h1>
+    <div class="hidden md:flex gap-8 text-sm text-gray-300">
+      <a href="#home" class="hover:text-sky-400">Home</a>
+      <a href="#about" class="hover:text-sky-400">About</a>
+      <a href="#skills" class="hover:text-sky-400">Skills</a>
+      <a href="#hobbies" class="hover:text-sky-400">Hobbies</a>
+      <a href="#contact" class="hover:text-sky-400">Contact</a>
+    </div>
+    <a href="#contact" class="bg-sky-400 text-black px-4 py-2 rounded-full text-sm font-bold">
+      Let's Talk ↗
+    </a>
+  </div>
+</nav>
 
-            <ul id="navLinks">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+<!-- HERO -->
+<section id="home" class="min-h-screen flex items-center pt-24 px-6">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center w-full">
 
-            <button class="menu-btn" onclick="toggleMenu()">☰</button>
-        </nav>
-    </header>
+    <div class="reveal">
+      <p class="text-sky-400 tracking-[4px] text-sm mb-5">
+        WELCOME TO MY CREATIVE WORLD
+      </p>
 
-    <section id="home" class="hero">
-        <div>
-            <p class="hello">HELLO, I'M</p>
-            <h1>Santhosh <span>Developer.</span></h1>
-            <h3>Web Developer | Video Editor | Designer</h3>
-            <p>I create modern websites and creative digital experiences.</p>
-            <a href="#projects" class="btn">View My Work</a>
+      <h1 class="text-5xl md:text-7xl font-black leading-tight">
+        HI, I'M<br>
+        <span class="gradient">SANTHOSH R</span>
+      </h1>
+
+      <h2 class="text-xl md:text-2xl text-gray-300 mt-6">
+        I'm a <span class="blue font-bold" id="typing">Web Developer</span>
+      </h2>
+
+      <p class="text-gray-400 mt-5 leading-7 max-w-lg">
+        A creative mind who loves building websites, editing videos,
+        designing graphics and turning crazy ideas into reality.
+        Always learning. Always creating.
+      </p>
+
+      <div class="flex flex-wrap gap-4 mt-8">
+        <a href="#contact" class="bg-sky-400 text-black px-7 py-3 rounded-full font-bold hover:bg-sky-300">
+          Contact Me ↗
+        </a>
+        <a href="#about" class="border border-gray-600 px-7 py-3 rounded-full hover:border-sky-400">
+          Explore More
+        </a>
+      </div>
+
+      <p class="text-gray-500 mt-10 text-sm">
+        WEB • DESIGN • EDITING • FOOTBALL
+      </p>
+    </div>
+
+    <div class="reveal flex justify-center">
+      <div class="relative w-72 h-80 md:w-96 md:h-[430px]">
+        <div class="absolute inset-0 rounded-3xl bg-gradient-to-br from-sky-400 to-purple-600 blur-2xl opacity-20"></div>
+        <div class="relative glass rounded-3xl h-full flex flex-col items-center justify-center border border-sky-400/30">
+          <!-- Add your santhosh.jpg in the same folder -->
+          <img src="santhosh.jpg" alt="Santhosh"
+               class="w-52 h-52 md:w-64 md:h-64 rounded-full object-cover border-4 border-sky-400 shadow-xl">
+          <h2 class="text-2xl font-black mt-6">SANTHOSH R</h2>
+          <p class="text-sky-400 text-sm mt-2">Creative Freelancer</p>
         </div>
-    </section>
+      </div>
+    </div>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>
-            I am a passionate computer science student interested
-            in web development, technology, video editing and design.
-            I love learning new skills and building creative projects.
-        </p>
-    </section>
+  </div>
+</section>
 
-    <section id="skills">
-        <h2>My Skills</h2>
-        <div class="skills">
-            <div>HTML</div>
-            <div>CSS</div>
-            <div>JavaScript</div>
-            <div>Java</div>
-            <div>Python</div>
-            <div>Video Editing</div>
+<!-- ABOUT -->
+<section id="about" class="py-24 px-6">
+  <div class="max-w-5xl mx-auto reveal">
+    <p class="blue tracking-widest text-sm">01 / ABOUT ME</p>
+    <h2 class="text-4xl font-black mt-4 mb-8">More Than Just <span class="gradient">One Thing.</span></h2>
+
+    <p class="text-gray-400 text-lg leading-8">
+      Hi, I am Santhosh. I'm a Web Developer, Video Editor,
+      Graphic Designer, Content Creator, Footballer and Freelancer.
+      I enjoy exploring technology and creativity together.
+      Whether it's developing a website, editing a video or
+      creating a unique design, I love making things that stand out.
+    </p>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-10">
+      <div class="glass p-5 rounded-xl card">
+        <h3 class="blue font-bold">01</h3>
+        <p class="mt-2 font-semibold">Web Developer</p>
+      </div>
+      <div class="glass p-5 rounded-xl card">
+        <h3 class="blue font-bold">02</h3>
+        <p class="mt-2 font-semibold">Video Editor</p>
+      </div>
+      <div class="glass p-5 rounded-xl card">
+        <h3 class="blue font-bold">03</h3>
+        <p class="mt-2 font-semibold">Graphic Designer</p>
+      </div>
+      <div class="glass p-5 rounded-xl card">
+        <h3 class="blue font-bold">04</h3>
+        <p class="mt-2 font-semibold">Content Creator</p>
+      </div>
+      <div class="glass p-5 rounded-xl card">
+        <h3 class="blue font-bold">05</h3>
+        <p class="mt-2 font-semibold">Footballer</p>
+      </div>
+      <div class="glass p-5 rounded-xl card">
+        <h3 class="blue font-bold">06</h3>
+        <p class="mt-2 font-semibold">Freelancer</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="py-24 px-6 bg-white/[0.02]">
+  <div class="max-w-5xl mx-auto">
+    <div class="reveal">
+      <p class="blue tracking-widest text-sm">02 / MY SKILLS</p>
+      <h2 class="text-4xl font-black mt-4 mb-12">
+        Things I <span class="gradient">Work With.</span>
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="glass rounded-2xl p-8 card reveal">
+        <h3 class="text-2xl font-bold mb-6">💻 Programming</h3>
+        <div class="flex flex-wrap gap-3">
+          <span class="skill">C</span>
+          <span class="skill">C++</span>
+          <span class="skill">Java</span>
+          <span class="skill">Python</span>
+          <span class="skill">HTML</span>
+          <span class="skill">CSS</span>
+          <span class="skill">JavaScript</span>
         </div>
-    </section>
+      </div>
 
-    <section id="projects">
-        <h2>My Projects</h2>
-        <div class="projects">
-            <div class="project-card">
-                <h3>Portfolio Website</h3>
-                <p>A personal website to showcase my skills.</p>
-            </div>
-
-            <div class="project-card">
-                <h3>Student Management</h3>
-                <p>A simple system to manage student details.</p>
-            </div>
-
-            <div class="project-card">
-                <h3>Creative Designs</h3>
-                <p>My video editing and thumbnail design work.</p>
-            </div>
+      <div class="glass rounded-2xl p-8 card reveal">
+        <h3 class="text-2xl font-bold mb-6">🎬 Editing & Design</h3>
+        <div class="flex flex-wrap gap-3">
+          <span class="skill">DaVinci Resolve</span>
+          <span class="skill">CapCut</span>
+          <span class="skill">Adobe Lightroom</span>
+          <span class="skill">PicsArt</span>
+          <span class="skill">Canva</span>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <p>Let's work together on something creative!</p>
+<!-- HOBBIES -->
+<section id="hobbies" class="py-24 px-6">
+  <div class="max-w-5xl mx-auto">
+    <div class="reveal">
+      <p class="blue tracking-widest text-sm">03 / BEYOND WORK</p>
+      <h2 class="text-4xl font-black mt-4 mb-12">
+        My <span class="gradient">Hobbies.</span>
+      </h2>
+    </div>
 
-        <form id="contactForm">
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" required></textarea>
-            <button type="submit" class="btn">Send Message</button>
-        </form>
-    </section>
+    <div class="grid sm:grid-cols-3 gap-5">
+      <div class="glass rounded-2xl p-8 card reveal">
+        <div class="text-4xl mb-5">🎧</div>
+        <h3 class="font-bold text-xl">Music</h3>
+        <p class="text-gray-400 mt-3 text-sm">Listening to music and enjoying different vibes.</p>
+      </div>
+      <div class="glass rounded-2xl p-8 card reveal">
+        <div class="text-4xl mb-5">🍳</div>
+        <h3 class="font-bold text-xl">Crazy Cooking</h3>
+        <p class="text-gray-400 mt-3 text-sm">Experimenting with food and cooking something crazy.</p>
+      </div>
+      <div class="glass rounded-2xl p-8 card reveal">
+        <div class="text-4xl mb-5">🎨</div>
+        <h3 class="font-bold text-xl">Creative Makeovers</h3>
+        <p class="text-gray-400 mt-3 text-sm">Making art designs and transforming rooms.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <footer>
-        <p>© 2026 Santhosh. All Rights Reserved.</p>
-    </footer>
+<!-- CONTACT -->
+<section id="contact" class="py-24 px-6 bg-white/[0.02]">
+  <div class="max-w-4xl mx-auto text-center reveal">
+    <p class="blue tracking-widest text-sm">04 / GET IN TOUCH</p>
+    <h2 class="text-4xl md:text-6xl font-black mt-5">
+      LET'S CREATE<br><span class="gradient">SOMETHING GREAT.</span>
+    </h2>
+    <p class="text-gray-400 mt-6">
+      Have a project, collaboration or just want to say hello?
+      My inbox is always open!
+    </p>
 
-    <script src="script.js"></script>
+    <a href="mailto:sanxjunior777@gmail.com"
+       class="inline-block mt-8 bg-sky-400 text-black px-8 py-4 rounded-full font-bold hover:bg-sky-300">
+      ✉ Mail Me
+    </a>
+
+    <div class="flex flex-wrap justify-center gap-5 mt-12 text-gray-300">
+      <a href="https://www.youtube.com/@thesanthoshuniverse" target="_blank" class="hover:text-sky-400">YouTube ↗</a>
+      <a href="https://www.instagram.com/heyysanx/" target="_blank" class="hover:text-sky-400">Instagram ↗</a>
+      <a href="https://www.instagram.com/sanxjr7/" target="_blank" class="hover:text-sky-400">DM Me ↗</a>
+    </div>
+  </div>
+</section>
+
+<footer class="border-t border-white/10 py-7 text-center text-gray-500 text-sm">
+  <p>© 2026 SANTHOSH R. All Rights Reserved.</p>
+  <p class="mt-2">Designed with creativity ✦ Built with passion.</p>
+</footer>
+
+<style>
+.skill {
+  padding: 10px 18px;
+  background: rgba(56,189,248,.08);
+  color: #7dd3fc;
+  border: 1px solid rgba(56,189,248,.2);
+  border-radius: 30px;
+  font-size: 14px;
+}
+</style>
+
+<script>
+// Typing animation
+const words = [
+  "Web Developer",
+  "Video Editor",
+  "Graphic Designer",
+  "Content Creator",
+  "Footballer",
+  "Freelancer"
+];
+
+let wordIndex = 0;
+let charIndex = 0;
+let deleting = false;
+const typing = document.getElementById("typing");
+
+function typeEffect() {
+  const current = words[wordIndex];
+
+  typing.textContent = current.substring(0, charIndex);
+
+  if (!deleting && charIndex < current.length) {
+    charIndex++;
+    setTimeout(typeEffect, 100);
+  } else if (deleting && charIndex > 0) {
+    charIndex--;
+    setTimeout(typeEffect, 50);
+  } else {
+    deleting = !deleting;
+    if (!deleting) wordIndex = (wordIndex + 1) % words.length;
+    setTimeout(typeEffect, 700);
+  }
+}
+typeEffect();
+
+// Scroll reveal animation
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+</script>
+
 </body>
 </html>
