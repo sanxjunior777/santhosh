@@ -1,47 +1,20 @@
-// MOBILE MENU
 
-const menuBtn = document.getElementById("menuBtn");
-const navLinks = document.getElementById("navLinks");
+function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("active");
+}
 
-menuBtn.addEventListener("click", function () {
-    navLinks.classList.toggle("active");
-});
-
-
-// CLOSE MENU AFTER CLICKING A LINK
-
-const links = document.querySelectorAll(".nav-links a");
-
-links.forEach(function (link) {
-
-    link.addEventListener("click", function () {
-        navLinks.classList.remove("active");
+// Close mobile menu after clicking a link
+document.querySelectorAll("#navLinks a").forEach(link => {
+    link.addEventListener("click", () => {
+        document.getElementById("navLinks").classList.remove("active");
     });
-
 });
 
+// Contact form demo
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
 
-// SIMPLE SCROLL REVEAL
+    alert("Thank you! Your message has been submitted.");
 
-const sections = document.querySelectorAll(".section");
-
-const observer = new IntersectionObserver(
-    function (entries) {
-
-        entries.forEach(function (entry) {
-
-            if (entry.isIntersecting) {
-                entry.target.classList.add("show");
-            }
-
-        });
-
-    },
-    {
-        threshold: 0.15
-    }
-);
-
-sections.forEach(function (section) {
-    observer.observe(section);
+    this.reset();
 });
